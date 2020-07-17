@@ -1,0 +1,16 @@
+@import 'variables';
+
+.actions {
+  margin-top: 250px;
+}
+
+.btn-primary {
+  background-color: $button-coll;
+  border: none;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 16px 0;
+  font-weight: bold;
+  top: 889px;
+}
