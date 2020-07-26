@@ -9,6 +9,7 @@ $header-padding-y: 16px;
   background-color: $primary-color;
   padding: $header-padding-y 16px;
   font-weight: bold;
+  border-bottom: solid 1px $text-base-color;
 
   &_loginBtn {
     background-color: $login-bg-color;
