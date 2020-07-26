@@ -6,6 +6,11 @@
       - if @board.user.present?
         %p= @board.user.display_name
       %p 2020/4/16
+    .board_detail_actions
+      .dropdown
+        = image_tag 'actions.svg', class: 'dropbtn'
+        .dropdown-content.mini
+          %a{:href => "#"} 編集する
   .board_content
     = @board.content
   .board_heart
