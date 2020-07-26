@@ -10,7 +10,7 @@
       .dropdown
         = image_tag 'actions.svg', class: 'dropbtn'
         .dropdown-content.mini
-          %a{:href => "#"} 編集する
+          = link_to '編集する', edit_board_path(@board)
   .board_content
     = @board.content
   .board_heart
