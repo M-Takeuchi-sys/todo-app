@@ -3,7 +3,8 @@
   .board_detail
     = image_tag 'default-avatar.png'
     %div
-      %p cohki0305
+      - if @board.user.present?
+        %p= @board.user.display_name
       %p 2020/4/16
   .board_content
     = @board.content
