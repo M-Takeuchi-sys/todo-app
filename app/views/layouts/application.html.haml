@@ -12,7 +12,10 @@
   %body
     %header.header
       .header_logos
-        %p.header_pageTitle Boards
+        - if !current_page?(root_path)
+          = link_to :back do
+            %p.header_back <
+        %p.header_pageTitle  Boards
       - if user_signed_in?
         .dropdown
           = image_tag 'default-avatar.png', class: 'header_avatar dropbtn'
