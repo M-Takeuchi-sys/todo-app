@@ -16,7 +16,7 @@
             %div
               - if board.user.present?
                 %p= board.user.display_name
-              %p 2020/4/16
+              %p= board.display_created_at
   = link_to new_board_path do
     .float_btn
       %i.fa.fa-plus  Add new borad

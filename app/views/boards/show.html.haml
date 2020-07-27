@@ -5,7 +5,7 @@
     %div
       - if @board.user.present?
         %p= @board.user.display_name
-        %p 2020/4/16
+        %p= @board.display_created_at
       - if user_signed_in? && current_user.has_written?(@board)
         .board_detail_actions
           .dropdown
