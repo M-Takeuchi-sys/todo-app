@@ -2,6 +2,7 @@
 
 $avatar-size: 40px;
 $header-padding-y: 16px;
+$back-icon-size: 16px;
 
 .header {
   display: flex;
@@ -10,6 +11,17 @@ $header-padding-y: 16px;
   padding: $header-padding-y 16px;
   font-weight: bold;
   border-bottom: solid 1px $text-base-color;
+
+  &_logos {
+    min-width: 0;
+    display: flex;
+  }
+
+  &_back {
+    font-size: 23px;
+    margin-right: 5px;
+    color: #000000;
+  }
 
   &_loginBtn {
     background-color: $login-bg-color;
