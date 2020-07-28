@@ -1,7 +1,7 @@
 .board
   %h1.board_title= @board.title
   .board_detail
-    = image_tag 'default-avatar.png'
+    = image_tag @board.user.avatar_image
     %div
       - if @board.user.present?
         %p= @board.user.display_name
