@@ -25,8 +25,10 @@ class User < ApplicationRecord
   has_many :boards, dependent: :destroy
   has_one :profile, dependent: :destroy
 
+  delegate :birthday, :gender, to: :profile, allow_nil: true
+
   def display_name
-    self.email.split('@').first
+    profile&.nickname || self.email.split('@').first
   end
 
   def prepare_profile
