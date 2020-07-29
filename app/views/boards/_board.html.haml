@@ -1,16 +1,14 @@
 = link_to board_path(board) do
   .card
-    .card_image
-      = image_tag 'eyecatch1.png'
     .card_content
       .card_title
         = board.title
-      .card_heart
-        = image_tag 'heart.svg'
-        %span 23
       .card_detail
         = image_tag board.user.avatar_image
         %div
           - if board.user.present?
             %p= board.user.display_name
           %p= board.display_created_at
+      .board_detail_actions
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
