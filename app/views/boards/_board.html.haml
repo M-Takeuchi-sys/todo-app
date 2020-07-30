@@ -9,6 +9,9 @@
           - if board.user.present?
             %p= board.user.display_name
           %p= board.display_created_at
-      .board_detail_actions
-        .dropdown
-          = image_tag 'actions.svg', class: 'dropbtn'
+          .card_detail_actions
+            .dropdown
+              = image_tag 'actions.svg', class: 'dropbtn'
+                .dropdown-content.mini
+                  = link_to '編集する', edit_board_path(board)
+                  = link_to '削除する', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
