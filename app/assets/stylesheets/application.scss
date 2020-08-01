@@ -28,7 +28,7 @@ html {
 
 body {
   height: 100%;
-  background-color: $base-bg-color;
+  background-color: #ffffff;
   font-size: 1em;
   color: $text-base-color;
 }
@@ -54,6 +54,7 @@ h2 {
   background-color: #ffffff;
   color: $text-base-color;
   border: dashed 1px $text-base-color;
+  border-radius: 10px;
 
   i {
     margin-top: 65px;
