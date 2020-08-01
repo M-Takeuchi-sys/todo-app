@@ -1,22 +1,7 @@
 .container
   = render 'tabs'
   - @boards.each do |board|
-    = link_to board_path(board) do
-      .card
-        .card_content
-          .card_title
-            = board.title
-          .card_detail
-            = image_tag board.user.avatar_image
-            %div
-              - if board.user.present?
-                %p= board.user.display_name
-              %p= board.display_created_at
-              .card_detail_actions
-                .dropdown
-                  = image_tag 'actions.svg', class: 'dropbtn'
-                  .dropdown-content.mini
-                    = link_to '編集する', edit_board_path(@board)
+    = render 'board', board: board
   = link_to new_board_path do
     .float_btn
       %i.fa.fa-plus  Add new borad
