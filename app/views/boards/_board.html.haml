@@ -1,6 +1,7 @@
 = link_to board_path(board) do
   .card
-    %h1.card_title= board.title
+    %h1.card_title
+      = board.title
     .card_detail
       %div
         - if user_signed_in? && current_user.has_written?(board)
