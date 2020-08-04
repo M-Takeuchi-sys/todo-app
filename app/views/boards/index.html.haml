@@ -1,6 +1,6 @@
 .container
   = render 'tabs'
-    - @boards.each do |board|
+  - @boards.each do |board|
     = render 'board', board: board
   = link_to new_board_path do
     .float_btn
