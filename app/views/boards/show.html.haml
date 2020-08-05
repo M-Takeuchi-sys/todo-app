@@ -1,30 +1,15 @@
-.board
-  %h1.board_title= @board.title
-  .board_detail
-    %div
-      - if user_signed_in? && current_user.has_written?(@board)
-        .board_detail_actions
-          .dropdown
-            = image_tag 'actions.svg', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to '編集する', edit_board_path(@board)
-              = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .board_content
-    = @board.content
-  .board_detail
-    = image_tag @board.user.avatar_image
-    %div
-      - if @board.user.present?
-        %p= @board.user.display_name
-        %p= @board.display_created_at
-      - if user_signed_in? && current_user.has_written?(@board)
-        .board_detail_actions
-          .dropdown
-            = image_tag 'actions.svg', class: 'dropbtn'
-            .dropdown-content.mini
-              = link_to '編集する', edit_board_path(@board)
-              = link_to '削除する', board_path(@board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .board_content
-    = @board.content
-  .board_heart
-    = image_tag 'heart.svg'
+.container
+  %h2= @board.title
+- @tasks.each do |task|
+  .task
+    %h1.task_title= task.title
+    .task_content
+      %p= task.content
+    .task_detail
+      = image_tag @board.user.avatar_image
+    .task_heart
+      = image_tag 'message-square-outline.svg'
+.container
+  = link_to new_board_task_path(@board) do
+    .float_btn
+      %i.fa.fa-plus  Add new card
