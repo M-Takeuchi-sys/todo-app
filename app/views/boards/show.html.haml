@@ -1,13 +1,13 @@
 .container
   %h2= @board.title
 - @tasks.each do |task|
-  .board
-    %h1.board_title= task.title
-    .board_content
+  .task
+    %h1.task_title= task.title
+    .task_content
       %p= task.content
-    .board_detail
+    .task_detail
       = image_tag @board.user.avatar_image
-    .board_heart
+    .task_heart
       = image_tag 'message-square-outline.svg'
 .container
   = link_to new_board_task_path(@board) do
