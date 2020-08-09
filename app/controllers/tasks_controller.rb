@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   def show
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
   end
-  
+
   def new
     board = Board.find(params[:board_id])
     @task = board.tasks.build
@@ -9,7 +11,7 @@ class TasksController < ApplicationController
 
   def create
     board = Board.find(params[:board_id])
-    @task = board.tasks.build(task_params)
+    @task = board.tasks.build(task_params.merge!(user_id: current_user.id))
     if @task.save
       redirect_to board_path(board), notice: 'タスクを追加'
     else
@@ -20,6 +22,6 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline)
+    params.require(:task).permit(:title, :content, :deadline, :eyecatch)
   end
 end
