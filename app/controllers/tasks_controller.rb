@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def show
     board = Board.find(params[:board_id])
     @task = board.tasks.find(params[:id])
@@ -15,8 +18,24 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to board_path(board), notice: 'タスクを追加'
     else
-      flash.now[:error] = '更新できませんでした'
+      flash.now[:error] = 'タスクを追加できませんでした'
       render :new
+    end
+  end
+
+  def edit
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:board_id])
+    @task = board.tasks.find(params[:id])
+    if @task.update(task_params)
+      redirect_to board_task_path(board_id: @task.board_id, id: @task.id), notice: 'タスクを追加'
+    else
+      flash.now[:error] = 'タスクを追加できませんでした'
+      render :edit
     end
   end
 
