@@ -1,12 +1,31 @@
 $heart-size: 32px;
 $avatar-size: 32px;
+$container-padding: 16px;
 
 .task {
   background-color: #f4f4f4;
   margin: 16px 16px;
-  padding: 16px 16px;
+  padding: $container-padding $container-padding;
   border-radius: 10px;
   position: relative;
+
+  &_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin: 1px;
+    border-radius: 8px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
 
   &_title {
     font-size: 22px;
