@@ -32,11 +32,18 @@ class TasksController < ApplicationController
     board = Board.find(params[:board_id])
     @task = board.tasks.find(params[:id])
     if @task.update(task_params)
-      redirect_to board_task_path(board_id: @task.board_id, id: @task.id), notice: 'タスクを追加'
+      redirect_to board_task_path(board_id: @task.board_id, id: @task.id), notice: '更新できました'
     else
-      flash.now[:error] = 'タスクを追加できませんでした'
+      flash.now[:error] = '更新できませんでした'
       render :edit
     end
+  end
+
+  def destroy
+    board = Board.find(params[:board_id])
+    task = board.tasks.find(params[:id])
+    task.destroy!
+    redirect_to board_path(board), notice: '削除に成功しました'
   end
 
   private

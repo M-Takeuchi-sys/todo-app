@@ -5,4 +5,4 @@
     = image_tag 'actions.svg', class: 'dropbtn'
       .dropdown-content.mini
         = link_to 'Edit', edit_board_task_path(board_id: @task.board_id, id: @task.id)
-        = link_to 'Delete', board_task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        = link_to 'Delete', board_task_path(board_id: @task.board_id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
