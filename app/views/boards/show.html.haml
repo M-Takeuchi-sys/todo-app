@@ -12,6 +12,8 @@
       .task_detail
         = image_tag @board.user.avatar_image
       .task_heart
+        %span
+          #{task.day}
         = image_tag 'message-square-outline.svg'
 .container
   = link_to new_board_task_path(@board) do

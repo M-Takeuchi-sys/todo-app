@@ -30,6 +30,5 @@ class Task < ApplicationRecord
   def day
     return '不明' unless deadline.present?
     days = deadline.yday - Time.zone.now.yday
-    "#残り{days}日"
   end
 end
