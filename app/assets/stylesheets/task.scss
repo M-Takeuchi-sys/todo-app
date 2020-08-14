@@ -13,7 +13,7 @@ $container-padding: 16px;
     height: 180px;
     position: relative;
     overflow: hidden;
-    margin: 1px;
+    margin-bottom: 10px;
     border-radius: 8px;
 
     img {
@@ -63,6 +63,26 @@ $container-padding: 16px;
     img {
       width: $heart-size;
       height: $heart-size;
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+  
+    &_detail {
+      padding-top: 10px;
+      display: flex;
+      font-size: 12px;
+      position: relative;
+  
+      img {
+        cursor: pointer;
+        width: $avatar-size;
+        height: $avatar-size;
+        border-radius: 100%;
+        margin-right: 16px;
+      }
     }
   }
 }
