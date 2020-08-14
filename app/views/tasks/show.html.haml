@@ -1,8 +1,21 @@
 .container
-  %h2= @task.title
-  - if user_signed_in? && current_user.has_task_written?(@task)
-  .dropdown
-    = image_tag 'actions.svg', class: 'dropbtn'
-      .dropdown-content.mini
-        = link_to 'Edit', edit_board_task_path(board_id: @task.board_id, id: @task.id)
-        = link_to 'Delete', board_task_path(board_id: @task.board_id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  .task_header
+    %h2= @task.title
+    .task_header_detail
+      %div
+        - if user_signed_in? && current_user.has_task_written?(@task)
+        .dropdown
+          = image_tag 'actions.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_task_path(board_id: @task.board_id, id: @task.id)
+              = link_to 'Delete', board_task_path(board_id: @task.board_id, id: @task.id), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+.container
+  - if @task.eyecatch.attached?
+    .task_image
+      = image_tag @task.eyecatch
+.task
+  .task_content
+    %p= @task.content
+.container
+  .float_btn
+    %i.fa.fa-plus  Add new comment
