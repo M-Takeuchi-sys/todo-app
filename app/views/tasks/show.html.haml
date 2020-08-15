@@ -17,5 +17,14 @@
   .task_content
     %p= @task.content
 .container
-  .float_btn
-    %i.fa.fa-plus  Add new comment
+  %h2 Comment
+- @comments.each do |comment|
+  .comment
+    .comment_detail
+      = image_tag comment.user.avatar_image
+    .comment_content
+      %p= comment.content
+.container
+  = link_to new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id) do
+    .float_btn
+      %i.fa.fa-plus  Add new comment
