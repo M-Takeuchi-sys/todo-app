@@ -38,15 +38,4 @@ $avatar-size: 32px;
   &_content {
     padding: 24px 0 32px;
   }
-
-  &_heart {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-
-    img {
-      width: $heart-size;
-      height: $heart-size;
-    }
-  }
 }
