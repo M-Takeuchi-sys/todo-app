@@ -1,0 +1,47 @@
+$heart-size: 32px;
+$avatar-size: 32px;
+$container-padding: 16px;
+
+.comment {
+  margin: 16px 16px;
+  padding: $container-padding $container-padding;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &_image {
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 8px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+
+  &_detail {
+    display: flex;
+    font-size: 12px;
+    position: relative;
+
+    img {
+      cursor: pointer;
+      width: $avatar-size;
+      height: $avatar-size;
+      border-radius: 100%;
+      margin-right: 16px;
+    }
+  }
+
+  &_content {
+    color: #000;
+  }
+}

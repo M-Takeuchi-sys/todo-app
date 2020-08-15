@@ -24,8 +24,9 @@ class Task < ApplicationRecord
   validates :content, presence: true
   validates :deadline, presence: true
 
-  belongs_to :board
   belongs_to :user
+
+  has_many :comments, dependent: :destroy
 
   def day
     return '不明' unless deadline.present?
