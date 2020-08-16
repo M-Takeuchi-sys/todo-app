@@ -10,7 +10,6 @@
         - if board.user.present?
           %p= board.user.display_name
           %p= board.display_created_at
-    .card_detail
       - if user_signed_in? && current_user.has_written?(board)
         .card_detail_actions
           .dropdown
