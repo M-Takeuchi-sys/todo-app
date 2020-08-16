@@ -30,23 +30,12 @@ $avatar-size: 32px;
 
     &_actions {
       right: 0px;
-      bottom: 2px;
+      bottom: 135px;
       position: absolute;
     }
   }
 
   &_content {
     padding: 24px 0 32px;
-  }
-
-  &_heart {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-
-    img {
-      width: $heart-size;
-      height: $heart-size;
-    }
   }
 }

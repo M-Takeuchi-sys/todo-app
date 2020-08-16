@@ -60,6 +60,12 @@ $container-padding: 16px;
     right: 16px;
     bottom: 16px;
 
+    span {
+      position: absolute;
+    right: 35px;
+    bottom: 5px;
+    }
+
     img {
       width: $heart-size;
       height: $heart-size;

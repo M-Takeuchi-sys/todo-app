@@ -61,3 +61,16 @@ h2 {
     margin-top: 65px;
   }
 }
+
+.float_btn_min {
+  height: 50px;
+  text-align: center;
+  background-color: #ffffff;
+  color: $text-base-color;
+  border: dashed 1px $text-base-color;
+  border-radius: 10px;
+  
+  i {
+    margin-top: 15px;
+  }
+}

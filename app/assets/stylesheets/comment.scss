@@ -7,7 +7,6 @@ $container-padding: 16px;
   padding: $container-padding $container-padding;
   position: relative;
   display: flex;
-  align-items: center;
 
   &_image {
     height: 180px;
@@ -42,6 +41,7 @@ $container-padding: 16px;
   }
 
   &_content {
+    font-size: 12px;
     color: #000;
   }
 }
