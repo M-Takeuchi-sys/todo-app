@@ -26,5 +26,5 @@
       %p= comment.content
 .container
   = link_to new_board_task_comment_path(board_id: @task.board_id, task_id: @task.id) do
-    .float_btn
+    .float_btn_min
       %i.fa.fa-plus  Add new comment
