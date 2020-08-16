@@ -2,15 +2,6 @@
   .card
     %h1.card_title
       = board.title
-    .card_detail
-      %div
-        - if user_signed_in? && current_user.has_written?(board)
-          .card_detail_actions
-            .dropdown
-              = image_tag 'actions.svg', class: 'dropbtn'
-              .dropdown-content.mini
-                = link_to 'Edit', edit_board_path(board)
-                = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
     .card_content
       = board.content
     .card_detail
@@ -19,3 +10,11 @@
         - if board.user.present?
           %p= board.user.display_name
           %p= board.display_created_at
+    .card_detail
+      - if user_signed_in? && current_user.has_written?(board)
+        .card_detail_actions
+          .dropdown
+            = image_tag 'actions.svg', class: 'dropbtn'
+            .dropdown-content.mini
+              = link_to 'Edit', edit_board_path(board)
+              = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
