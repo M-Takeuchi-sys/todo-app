@@ -1,0 +1,17 @@
+2020-08-18 06:57:20.857 JST [14674] LOG:  starting PostgreSQL 12.3 on x86_64-apple-darwin19.4.0, compiled by Apple clang version 11.0.3 (clang-1103.0.32.59), 64-bit
+2020-08-18 06:57:20.859 JST [14674] LOG:  listening on IPv6 address "::1", port 5432
+2020-08-18 06:57:20.859 JST [14674] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2020-08-18 06:57:20.859 JST [14674] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2020-08-18 06:57:20.868 JST [14675] LOG:  database system was shut down at 2020-08-18 06:57:04 JST
+2020-08-18 06:57:20.871 JST [14674] LOG:  database system is ready to accept connections
+2020-08-18 07:02:20.885 JST [14676] ERROR:  could not access status of transaction 0
+2020-08-18 07:02:20.885 JST [14676] DETAIL:  Could not open file "pg_xact/0000": No such file or directory.
+2020-08-18 07:02:20.904 JST [14674] LOG:  could not open file "postmaster.pid": No such file or directory
+2020-08-18 07:02:20.904 JST [14674] LOG:  performing immediate shutdown because data directory lock file is invalid
+2020-08-18 07:02:20.904 JST [14674] LOG:  received immediate shutdown request
+2020-08-18 07:02:20.904 JST [14674] LOG:  could not open file "postmaster.pid": No such file or directory
+2020-08-18 07:02:20.904 JST [14679] WARNING:  terminating connection because of crash of another server process
+2020-08-18 07:02:20.904 JST [14679] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2020-08-18 07:02:20.904 JST [14679] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2020-08-18 07:02:20.904 JST [14680] LOG:  could not open temporary statistics file "pg_stat/global.tmp": No such file or directory
+2020-08-18 07:02:21.888 JST [14674] LOG:  database system is shut down
